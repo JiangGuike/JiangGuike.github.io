@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="江癸科" content="contact:3100209352@qq.com">
+    <title>CGL</title>
+    <link rel="stylesheet" href="A.css">
+    <script src="A.js"></script>
+</head> 
+<body background="../picture/5138846.jpg"
+style=" background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;"
+>
+<div class="wall">
+    <span class="biaoti">物联网环境检测系统</span>
+    <span class="wendu">温度    :</span>
+    <span class="shidu">湿度    :</span>
+    <span class="fuhao1">℃</span>
+    <span class="fuhao2">%RH</span>
+    <span class="temperature">36</span>
+    <span class="humidity">50</span>
+    <span id="time"></span>
+    <script>
+        var show= function(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            month= month<10?"0"+month:month;
+            var day = date.getDate();//获取日期
+            day= day<10?"0"+day:day;
+            var hour = date.getHours();
+            hour= hour<10?"0"+hour:hour;
+            var minute = date.getMinutes();
+            minute= minute<10?"0"+minute:minute;
+            var week = date.getDay();//获取星期
+            var second=date.getSeconds();
+            second= second<10?"0"+second:second;
+            week = "日一二三四五六".charAt(week);
+            week="星期"+week;
+            result=year+"-"+month+"-"+day+" "+week+" "+hour+":"+minute+":"+second;
+            document.getElementById("time").innerHTML=result;
+     }
+        show();
+        setInterval("show()",1000);
+    </script>
+    <style>
+        
+.wall{
+    width: 800px !important;
+    height: 500px !important;
+    margin: 5% 0 0 25%;
+    border-radius: 10px 10px 10px 10px;
+    position:relative;
+    background-color: rgba(165, 255, 214, 0.527);
+    border-style:solid; 
+    border-width:2px;
+    backdrop-filter: blur(5px); 
+    border-color:rgb(132,220,198);
+
+
+
+}
+
+
+.biaoti {
+    position:  absolute;
+    top: 5%;
+    left: 20%;
+    color: rgba(255,166,158, 1);
+    text-shadow: 4px 2px 9px rgba(255,166,158, 1);
+    font-size: 50px;
+}
+.wendu {
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    color: rgba(255,166,158, 1);
+    font-size: 30px;
+}
+.shidu {
+    position: absolute;
+    left: 35%;
+    top: 55%;
+    color: rgba(255,166,158, 1);
+    font-size: 30px;
+}
+#time{
+    position: absolute;
+    left: 25%;
+    top: 80%;
+    color: rgba(255,166,158, 1);
+    font-size: 30px;
+}
+.fuhao1 {
+    position: absolute;
+    left: 60%;
+    top: 35%;
+    color: rgba(255,166,158, 1);
+    font-size: 30px;
+}
+.fuhao2 {
+    position: absolute;
+    left: 60%;
+    top: 55%;
+    color: rgba(255,166,158, 1);
+    font-size: 30px;
+}
+.temperature {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    color: rgb(255,104,107);
+    font-size: 30px;
+}
+.humidity {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    color: rgb(255,104,107);
+    font-size: 30px;
+}
+    </style>
+</div>
+</body>
